@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CardProps from './card';
+
+const CardView: React.FC<CardProps> = props => {
+  const cardClass = 'card rank-' + props.rank.toLowerCase() + ' ' + props.suit;
+
+  return(
+    <div className="playingCards faceImages">
+      <span className={cardClass}>
+        <span className="rank">{props.rank}</span>
+        <span className="suit">{props.suit}</span>
+      </span>
+    </div>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardView rank={'K'} suit={'♦'}/>
     </div>
   );
 }
