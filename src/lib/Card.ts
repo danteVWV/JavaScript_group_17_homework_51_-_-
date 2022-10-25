@@ -1,5 +1,5 @@
 class Card {
-  constructor(public suit: string, public rank: string) {}
+  constructor(public rank: string, public suit: string) {}
 }
 
 export default Card;
